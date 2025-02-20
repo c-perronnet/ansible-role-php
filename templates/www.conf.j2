@@ -21,6 +21,4 @@ pm.status_path = {{ item.pool_pm_status_path }}
 {% if item.pool_request_terminate_timeout|length %}
 request_terminate_timeout = {{ item.pool_request_terminate_timeout }}
 {% endif %}
-{% if item.pool_request_terminate_timeout_track_finished|length %}
 request_terminate_timeout_track_finished = {{ item.pool_request_terminate_timeout_track_finished }}
-{% endif %}
