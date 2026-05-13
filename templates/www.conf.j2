@@ -24,3 +24,15 @@ request_terminate_timeout = {{ item.pool_request_terminate_timeout }}
 {% if item.pool_request_terminate_timeout_track_finished is defined %}
 request_terminate_timeout_track_finished = {{ item.pool_request_terminate_timeout_track_finished }}
 {% endif %}
+{% for k, v in (item.pool_php_admin_values | default({})).items() %}
+php_admin_value[{{ k }}] = {{ v }}
+{% endfor %}
+{% for k, v in (item.pool_php_admin_flags | default({})).items() %}
+php_admin_flag[{{ k }}] = {{ v }}
+{% endfor %}
+{% for k, v in (item.pool_php_values | default({})).items() %}
+php_value[{{ k }}] = {{ v }}
+{% endfor %}
+{% for k, v in (item.pool_php_flags | default({})).items() %}
+php_flag[{{ k }}] = {{ v }}
+{% endfor %}
